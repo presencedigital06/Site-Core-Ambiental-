@@ -1,27 +1,387 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Core Ambiental - Consultoria Sustentável</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Sobre Nós - Core Ambiental</title>
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ==========================
+   BASE E CONTAINER
+========================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==========================
+   SEÇÃO SOBRE (ABOUT)
+========================== */
+.about-section {
+  padding: 120px 0;
+}
+
+.about-section .page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--verde-escuro);
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  text-align: justify;
+}
+
+.about-text {
+  background: var(--branco);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  max-width: 850px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--cinza-escuro);
+  transition: all 0.3s ease;
+  text-align: justify;
+}
+
+.about-text:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-verde);
+}
+
+/* ==========================
+   MISSÃO & VISÃO
+========================== */
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--branco);
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.mission-card i,
+.vision-card i {
+  font-size: 45px;
+  color: var(--verde-meio);
+  margin-bottom: 20px;
+}
+
+.mission-card h3,
+.vision-card h3 {
+  font-size: 1.6rem;
+  color: var(--verde-escuro);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.mission-card p,
+.vision-card p {
+  font-size: 1rem;
+  color: var(--cinza-escuro);
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--sombra-verde);
+}
+
+/* ==========================
+   EQUIPE (TEAM)
+========================== */
+.team-section {
+  padding: 100px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.team-card {
+  background: var(--branco);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: var(--sombra-verde);
+}
+
+.team-img {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-img img {
+  transform: scale(1.05);
+}
+
+.team-content {
+  padding: 25px;
+}
+
+.team-content h3 {
+  margin-bottom: 12px;
+  color: var(--verde-escuro);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.team-content p {
+  line-height: 1.7;
+  color: var(--cinza-escuro);
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* ==========================
+   VALORES (VALUES)
+========================== */
+.values-section {
+  padding: 100px 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: var(--sombra);
+  transition: all 0.3s ease;
+}
+
+.value-card i {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: var(--verde-meio);
+}
+
+.value-card h4 {
+  font-size: 1.3rem;
+  color: var(--verde-escuro);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--cinza-escuro);
+  text-align: justify;
+}
+
+.value-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--sombra-verde);
+}
+
+/* ==========================
+   BOTÃO WHATSAPP
+========================== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  box-shadow: var(--sombra);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe57;
+  transform: scale(1.1);
+}
+
+/* ==========================
+   MEDIA QUERIES
+========================== */
+
+/* Tablets e telas médias */
+@media (max-width: 1023px) {
+  .about-section {
+    padding: 90px 0;
+  }
+
+  .about-section .page-title {
+    font-size: 2.3rem;
+  }
+
+  .team-section,
+  .values-section {
+    padding: 80px 0;
+  }
+
+  .team-img {
+    height: 280px;
+  }
+}
+
+/* Telas pequenas (mobile landscape e tablets pequenos) */
+@media (max-width: 768px) {
+  .about-text {
+    padding: 30px 25px;
+    font-size: 1rem;
+  }
+
+  .mission-vision {
+    gap: 25px;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .team-grid {
+    gap: 25px;
+  }
+
+  .team-img {
+    height: 250px;
+  }
+
+  .values-grid {
+    gap: 25px;
+  }
+}
+
+/* Mobile médio (até 576px) */
+@media (max-width: 576px) {
+  .about-section {
+    padding: 70px 0;
+  }
+
+  .about-section .page-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    padding: 25px 20px;
+    font-size: 0.95rem;
+  }
+
+  .mission-card p,
+  .vision-card p,
+  .value-card p {
+    font-size: 0.9rem;
+  }
+
+  .team-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-content p {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 18px;
+    right: 18px;
+    font-size: 26px;
+  }
+}
+
+/* Mobile pequeno (até 400px) */
+@media (max-width: 400px) {
+  .about-section .page-title {
+    font-size: 1.8rem;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .value-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .team-content p {
+    font-size: 0.85rem;
+  }
+}
+
+</style>
+
 </head>
+
 <body>
 
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="logo oficial.png" alt="Core Ambiental">
-    </div>
+      <a href="../index.html"><img src="../logo oficial.png" alt="Core Ambiental">
+      </a></div>
     <nav class="nav">
       <ul class="menu">
-        <li><a href="sobre/index.html">Sobre Nós</a></li>
-        <li><a href="servicos/index.html">Serviços</a></li>
-        <li><a href="informacoes/index.html">Informações</a></li>
-        <li><a href="#contato" class="btn-header">Entre em Contato</a></li>
+        <li><a href="../index.html">Início</a></li>
+            <li><a style="color: rgb(3, 36, 0);" href="../sobre/index.html">Sobre Nós</a></li>
+      
+        <li><a href="../servicos/index.html">Serviços</a></li>
+        <li><a href="../">Informações</a></li>
+         <li><a href="#contato" class="btn-header">Entre em Contato</a></li>
         <div class="footer-column">
           <div class="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61563403049674"><i class="fab fa-facebook-f"></i></a>
@@ -31,25 +391,19 @@
           </div>
         </div>
       </ul>
-
-      <!-- Hamburger -->
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="hamburger"><span></span><span></span><span></span></button>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+    <section class="hero">
     <video autoplay muted loop playsinline class="hero-video" poster="fundo.jpg">
-      <source src="DJI_0234 (1).mp4" type="video/mp4">
+      <source src="../DJI_0234 (1).mp4" type="video/mp4">
       Seu navegador não suporta vídeo em HTML5.
     </video>
 
     <div class="hero-logo">
-      <img src="logo oficial.png" alt="Core Ambiental">
+      <img src="../logo oficial.png" alt="Core Ambiental">
     </div>
 
     <div class="hero-text">
@@ -58,69 +412,103 @@
     </div>
   </section>
 
-<!-- SERVIÇOS ESTILO CENTRAL -->
-<section class="servicos-central" id="servicos">
-  <h2>Conheça Nossos Serviços</h2>
-  <div class="servicos-wrapper">
+  <!-- MAIN -->
+  <main class="container">
 
-    <!-- Coluna esquerda -->
-    <div class="servicos-col">
-      <div class="servico-card">
-        <i class="fas fa-file-signature"></i>
-        <h3>Licenciamento Ambiental</h3>
-        <p>LP, LI, LO; EIA/RIMA; PRAD, PCA/RAS, RAP; Renovação de Licenças; CTF, Compensação Ambiental;
-           Levantamento de Fauna e Flora; Laudos de Recursos Naturais.</p>
+    <!-- SOBRE -->
+    <section id="sobre" class="about-section">
+      <h2 class="page-title">Nossa História</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>A <strong>Core Ambiental</strong> é uma consultoria especializada em soluções ambientais, com foco em sustentabilidade, licenciamento e projetos técnicos. Nossa equipe multidisciplinar une conhecimento científico, experiência prática e inovação para auxiliar empresas e órgãos públicos a alcançarem resultados sustentáveis e responsáveis.</p>
+          <p>Fundada com o propósito de transformar o relacionamento entre negócios e meio ambiente, atuamos com excelência técnica e compromisso com o desenvolvimento sustentável, oferecendo soluções integradas que atendem às exigências legais e promovem a conservação ambiental.</p>
+        </div>
+        <div class="mission-vision">
+          <div class="mission-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Missão</h3>
+            <p>Oferecer soluções ambientais integradas e inovadoras que auxiliem nossos clientes a alcançarem sustentabilidade em seus negócios, garantindo conformidade legal e excelência técnica.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-eye"></i>
+            <h3>Visão</h3>
+            <p>Ser referência em consultoria ambiental, reconhecida pela qualidade dos serviços, inovação tecnológica e compromisso com a sustentabilidade e conservação ambiental.</p>
+          </div>
+        </div>
       </div>
-      <div class="servico-card">
-        <i class="fas fa-tree"></i>
-        <h3>Autorizações e Intervenções</h3>
-        <p>Outorgas e Uso da Água; Projetos em APPs; Supressão de Vegetação; Arborização Urbana.</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-flask"></i>
-        <h3>Monitoramento e Topografia</h3>
-        <p>Georreferenciamento e
-           Mapeamento de Áreas com uso de Drones Levantamentos Topográficos
-            para Fins Ambientais Monitoramento Ambiental (água, solo, vegetação) 
-            Inspeção Ambiental e Documentação Fotográfica </p>
-      </div>
-    </div>
+    </section>
 
-    <!-- Imagem central -->
-    <div class="servicos-imagem">
-      <img src="ilustracao-servicos.jpg" alt="Serviços Ambientais">
-    </div>
+    <!-- EQUIPE -->
+    <section class="team-section">
+      <h2 class="page-title">Nossa Equipe</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img">
+            <img src="CoreAmbiental (95)(1).jpg" alt="Eduardo">
+          </div>
+          <div class="team-content">
+            <h3>Eduardo Mallet</h3>
+            <p>Engenheiro Ambiental e Sanitarista com Mestrado em Meio Ambiente, Recursos Hídricos e Saneamento Ambiental. Possui experiência comsolidada em consultoria e desenvolvimento de projetos ambientais e agrícolas.</p>
+          </div>
+        </div>
 
-    <!-- Coluna direita -->
-    <div class="servicos-col">
-      <div class="servico-card">
-        <i class="fas fa-recycle"></i>
-        <h3>Gestão de Resíduos</h3>
-        <p> PGRS/PGRSS/PGRCC; CADRI e MTR; Logística Reversa. </p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-book"></i>
-        <h3>Aprovação de Loteamentos (GRAPROHAB)</h3>
-        <p>Aprovação de Parcelamento do Solo Elaboração e 
-          Acompanhamento de Projetos de Loteamentos Laudos Técnicos e Elaboração de Plantas Ambientais 
-          e Urbanísticas</p>
-      </div>
-      <div class="servico-card">
-        <i class="fas fa-leaf"></i>
-        <h3>Outros Serviços</h3>
-        <p>CAR - Cadastro Ambiental Rural Programas de Educação Ambiental Participação em Programas como Município Verde-Azul e Município Agro Elaboração e acompanhamento de Termos de Ajuste de Conduta (TAC) Gerenciamento de Áreas Contaminadas (GAC) - Avaliação, Investigação e Encerramento.</p>
-      </div>
-    </div>
+        <div class="team-card">
+          <div class="team-img">
+            <img src="CoreAmbiental (30)(1).jpg" alt="Gabriela Faria Crispim">
+          </div>
+          <div class="team-content">
+            <h3>Gabriela Faria Crispim</h3>
+            <p>Bióloga com 7 anos de experiência no setor público, especializada em projetos ambientais. Sua atuação abrange licenciamento ambiental e certificação de sustentabilidade ESG.</p>
+          </div>
+        </div>
 
-  </div>
-</section>
+        <div class="team-card">
+          <div class="team-img">
+            <img src="CoreAmbiental (42)(1).jpg" alt="Tamiris Teixeira Verjiao">
+          </div>
+          <div class="team-content">
+            <h3>Tamiris Teixeira Verjiao</h3>
+            <p>Bióloga e especialista em Licenciamento Ambiental com foco em gestão pública. Atua na implementação de serviços e supervisão de políticas públicas ambientais, assegurando que os projetos sejam sustententáveis e estejam em conformidade com a legislação vigente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- BOTÃO WHATSAPP -->
+    <!-- VALORES -->
+    <section class="values-section">
+      <h2 class="page-title">Nossos Valores</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Sustentabilidade</h3>
+          <p>Compromisso com o equilíbrio entre desenvolvimento econômico e preservação ambiental.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-flask"></i>
+          <h3>Excelência Técnica</h3>
+          <p>Rigor científico e qualidade na execução de todos os projetos e serviços.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Parceria</h3>
+          <p>Relação transparente e colaborativa com clientes, comunidades e stakeholders.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Inovação</h3>
+          <p>Busca constante por novas tecnologias e soluções criativas para desafios ambientais.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- BOTÃO WHATSAPP -->
   <a href="https://wa.me/5514998851685" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- FOOTER -->
+ <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -162,6 +550,7 @@
     </div>
   </footer>
 
+  
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -176,6 +565,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
